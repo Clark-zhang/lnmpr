@@ -15,7 +15,7 @@ services:
       - php-fpm
     networks:
       lnmp:
-        ipv4_address: 172.25.0.100
+        ipv4_address: 172.24.0.100
 
   # php-fpm
   php-fpm:
@@ -32,7 +32,7 @@ services:
       - redis
     networks:
       lnmp:
-        ipv4_address: 172.25.0.101
+        ipv4_address: 172.24.0.101
 
   redis:
     build: ./redis
@@ -43,7 +43,7 @@ services:
       - "6379"
     networks:
       lnmp:
-        ipv4_address: 172.25.0.102
+        ipv4_address: 172.24.0.102
 
   mysql:
     image: mysql:5.7
@@ -61,11 +61,11 @@ services:
       MYSQL_DATABASE: test
     networks:
       lnmp:
-        ipv4_address: 172.25.0.103
+        ipv4_address: 172.24.0.103
 
 networks:
   lnmp:
     driver: bridge
     ipam:
       config:
-      - subnet: 172.25.0.0/24
+      - subnet: 172.24.0.0/24
